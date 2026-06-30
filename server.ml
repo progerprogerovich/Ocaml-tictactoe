@@ -104,3 +104,6 @@ let create_server port =
   Lwt_io.printf "Server started on port %d. Waiting for connections...\n" port >>= fun () ->
   fst (Lwt.wait ())
 
+let () =
+  let port = 9000 in
+  Lwt_main.run (create_server port)
